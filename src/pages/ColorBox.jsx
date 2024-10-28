@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const ColorBox = () => {
-  const [color, setColor] = useState('#ffffff');
+  const [color, setColor] = useState('#000000');
 
- 
+
   const getRandomColor = () => {
     const letters = '0123456789ABCDEF';
     let randomColor = '#';
@@ -20,18 +20,22 @@ const ColorBox = () => {
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center vh-100"
-      style={{ backgroundColor: color }}
+      className="d-flex justify-content-center align-items-center vh-100 bg-light"
     >
-      <div className="text-center">
-        <h3 className="text-white mb-3">{color}</h3>
-        <button
-          className="btn btn-light btn-lg"
-          onClick={changeColor}
-        >
-          Change Color
-        </button>
+      <div>
+        <div className="d-flex justify-content-center align-items-center rounded" style={{ backgroundColor: color, width: '250px', height: '250px' }} >
+          <h3 className='text-white'>{color}</h3>
+        </div>
+        <div className="mt-3 text-center">
+          <button
+            className="btn btn-outline-primary btn-lg"
+            onClick={changeColor}
+          >
+            Change Color
+          </button>
+        </div>
       </div>
+
     </div>
   );
 };
